@@ -10,7 +10,7 @@ function getSalary(li) {
 function sortList(getListElements) {
   const ul = listElements[0].parentNode;
 
-  const sortedElements = [getListElements].sort(
+  const sortedElements = [...getListElements].sort(
     (a, b) => getSalary(b) - getSalary(a),
   );
 
@@ -30,7 +30,7 @@ function getEmployees(getEmployeesListElements) {
     });
   }
 
-  return employees;
+  return getedEmployees;
 }
 
 // Отримуємо всі <li>
@@ -39,4 +39,4 @@ const listElements = document.querySelectorAll('li[data-salary]');
 // Викликаємо функції
 sortList(listElements);
 
-const employees = getEmployees(listElements);
+getEmployees(listElements);

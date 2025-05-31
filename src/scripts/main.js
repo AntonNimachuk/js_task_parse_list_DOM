@@ -10,7 +10,7 @@ function getSalary(li) {
 function sortList(getListElements) {
   const ul = listElements[0].parentNode;
 
-  const sortedElements = [...listElements].sort(
+  const sortedElements = [getListElements].sort(
     (a, b) => getSalary(b) - getSalary(a),
   );
 
@@ -18,10 +18,10 @@ function sortList(getListElements) {
   sortedElements.forEach((li) => ul.appendChild(li));
 }
 
-function getEmployees(getEmployeesistElements) {
+function getEmployees(getEmployeesListElements) {
   const getedEmployees = [];
 
-  for (const li of listElements) {
+  for (const li of getEmployeesListElements) {
     getedEmployees.push({
       name: li.textContent.trim(),
       position: li.dataset.position,
